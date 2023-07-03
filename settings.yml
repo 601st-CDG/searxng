@@ -1,0 +1,20 @@
+# see https://docs.searxng.org/admin/engines/settings.html#use-default-settings
+use_default_settings: true
+server:
+  # base_url is defined in the SEARXNG_BASE_URL environment variable, see .env and docker-compose.yml
+  secret_key: "8ff62edb0f104b4d6169c61bb9f81f0acbefd7fda1ea2bd0b0715447e19d64de"  # change this!
+  limiter: true  # can be disabled for a private instance
+  image_proxy: true
+  method: "GET"
+ui:
+  static_use_hash: true
+redis:
+  url: redis://redis:6379/0
+general:
+  debug: false          # Debug mode, only for development
+  instance_name: "ItascaGroup DarkSearch"    # Displayed name
+  contact_url: false    # mailto:security@itascagroup.com
+  enable_metrics: true  # record stats
+search:
+  # safe_search: 0    # Safe Search 0, 1, 2 - None, Moderate, Strict
+  autocomplete: "duckduckgo"
